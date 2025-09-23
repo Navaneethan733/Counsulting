@@ -1,0 +1,116 @@
+/* Reset some Word-export junk */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Calibri", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222;
+  padding: 20px;
+  background: url(./Video/6915809_Motion_Graphics_Motion_Graphic_3840x2160.mp4)
+    no-repeat center center / cover;
+}
+
+#header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+}
+
+.logo img {
+  display: block;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem; /* reduce spacing */
+  background-color: #d0cece67;
+  padding: 18px 95px;
+  border-radius: 35px;
+}
+
+.navbar a {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #20d6b5;
+}
+
+.Signin {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  background: #20d6b5;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.Signin:hover {
+  background: #00ffd0;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: -999;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin: 80px auto;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto 25px;
+}
+
+/* CTA Button */
+.btn-primary {
+  display: inline-block;
+  background: #20d6b5;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #20d6b5;
+}

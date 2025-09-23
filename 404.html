@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found</title>
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #0d1117;
+        color: #c9d1d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        min-height: 100%;
+        z-index: -999;
+      }
+
+      /* Container */
+      .container {
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 10rem;
+        color: #58a6ff;
+        animation: glitch 1.5s infinite;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(-5px, 5px);
+        }
+        50% {
+          transform: translate(5px, -5px);
+        }
+        75% {
+          transform: translate(-5px, 5px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin: 20px 0;
+        color: #8b949e;
+      }
+
+      a.btn {
+        display: inline-block;
+        text-decoration: none;
+        color: #0d1117;
+        background: #58a6ff;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      a.btn:hover {
+        background: #1f6feb;
+        transform: translateY(-3px);
+      }
+
+      /* Optional floating tech icon */
+      .icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+        color: #79c0ff;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source
+        src="./Video/6915809_Motion_Graphics_Motion_Graphic_3840x2160.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <div class="container">
+      <div class="icon"><img src="./Image/LOGO.png" alt="" /></div>
+      <h1>404</h1>
+      <p>Oops! The page you are looking for doesn’t exist.</p>
+      <a href="/" class="btn">Go Back Home</a>
+    </div>
+  </body>
+</html>
