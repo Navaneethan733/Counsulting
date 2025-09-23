@@ -1,120 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 — Page Not Found</title>
-    <style>
-      /* Reset */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #0d1117;
-        color: #c9d1d9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-        overflow: hidden;
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,#0a0a0f,#1a1a2f);
+    color: #e2e2e2;
+    overflow: hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+  }
 
-      #myVideo {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        min-height: 100%;
-        z-index: -999;
-      }
+  .wrap { position:relative; display:flex; max-width:1000px; gap:2rem; padding:2rem; z-index:1; }
 
-      /* Container */
-      .container {
-        max-width: 600px;
-      }
+  .left { flex:1; }
+  .right { flex:1; display:flex; justify-content:center; align-items:center; position:relative; }
 
-      h1 {
-        font-size: 10rem;
-        color: #58a6ff;
-        animation: glitch 1.5s infinite;
-      }
+  .glitch {
+    font-size:6rem; font-weight:800; color:#00eaff;
+    text-shadow:2px 2px #ff00ff;
+    animation: glitch 1.5s infinite;
+  }
 
-      @keyframes glitch {
-        0% {
-          transform: translate(0, 0);
-        }
-        25% {
-          transform: translate(-5px, 5px);
-        }
-        50% {
-          transform: translate(5px, -5px);
-        }
-        75% {
-          transform: translate(-5px, 5px);
-        }
-        100% {
-          transform: translate(0, 0);
-        }
-      }
+  @keyframes glitch {
+    0% { text-shadow:2px 2px #ff00ff; }
+    20% { text-shadow:-2px -2px #00ffea; }
+    40% { text-shadow:2px -2px #ff00ff; }
+    60% { text-shadow:-2px 2px #00ffea; }
+    80% { text-shadow:2px 2px #ff00ff; }
+    100% { text-shadow:2px 2px #ff00ff; }
+  }
 
-      p {
-        font-size: 1.5rem;
-        margin: 20px 0;
-        color: #8b949e;
-      }
+  .controls { margin-top:1.5rem; display:flex; gap:1rem; }
+  .btn {
+    display:inline-block; text-decoration:none;
+    background:transparent; border:2px solid #00eaff;
+    color:#00eaff; padding:0.6rem 1.2rem; font-size:1rem;
+    border-radius:8px; cursor:pointer; transition:0.3s;
+  }
+  .btn:hover { background:#00eaff; color:#0a0a0f; box-shadow:0 0 20px #00eaff; }
+  .btn.primary { border-color:#ff00ff; color:#ff00ff; }
+  .btn.primary:hover { background:#ff00ff; color:#0a0a0f; box-shadow:0 0 20px #ff00ff; }
 
-      a.btn {
-        display: inline-block;
-        text-decoration: none;
-        color: #0d1117;
-        background: #58a6ff;
-        padding: 12px 25px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: 0.3s;
-      }
+  .panel {
+    background: rgba(255,255,255,0.05); border:1px solid #444;
+    padding:0.8rem; margin:1rem 0; border-radius:6px;
+    font-family: monospace; font-size:0.9rem;
+  }
 
-      a.btn:hover {
-        background: #1f6feb;
-        transform: translateY(-3px);
-      }
+  .meta { margin-top:1rem; font-size:0.8rem; opacity:0.7; }
 
-      /* Optional floating tech icon */
-      .icon {
-        font-size: 5rem;
-        margin-bottom: 20px;
-        color: #79c0ff;
-        animation: float 3s ease-in-out infinite;
-      }
+  .logo-img { height:100px; width:200px; animation: float 5s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-12px);} }
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <video autoplay muted loop id="myVideo">
-      <source
-        src="./Video/6915809_Motion_Graphics_Motion_Graphic_3840x2160.mp4"
-        type="video/mp4"
-      />
-    </video>
+  .spark {
+    position:absolute; width:10px; height:10px;
+    background:#ff00ff; border-radius:50%; opacity:0.8;
+    animation:spark 2s infinite;
+  }
+  .spark--one { top:20%; left:50%; animation-delay:0.3s; }
+  .spark--two { bottom:30%; right:40%; animation-delay:1.2s; }
+  @keyframes spark {
+    0% { transform: scale(0.6) rotate(0deg); opacity:0.8; }
+    50% { transform: scale(1.3) rotate(180deg); opacity:0.2; }
+    100% { transform: scale(0.6) rotate(360deg); opacity:0.8; }
+  }
 
-    <div class="container">
-      <div class="icon"><img src="./Image/LOGO.png" alt="" /></div>
-      <h1>404</h1>
-      <p>Oops! The page you are looking for doesn’t exist.</p>
-      <a href="/" class="btn">Go Back Home</a>
+  #particles { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; }
+</style>
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<div class="wrap">
+  <div class="left">
+    <div class="eyebrow">ERROR • 404</div>
+    <h1><span class="glitch">404</span></h1>
+    <p class="lead">Oops! The page you’re looking for isn’t here.</p>
+    <div class="panel">&lt;GET <span id="route">/missing-page</span>&gt; — <span id="status">Not Found</span></div>
+    <div class="controls">
+      <a href="./index.html" class="btn primary">🏠 Go Home</a>
+      <button class="btn" id="reportBtn">🐞 Report Issue</button>
     </div>
-  </body>
+    <div class="meta">Route: <span id="route-meta">/unknown</span></div>
+  </div>
+
+  <div class="right">
+    <img src="./Image/LOGO.png" alt="Logo" class="logo-img">
+    <div class="spark spark--one"></div>
+    <div class="spark spark--two"></div>
+  </div>
+</div>
+
+<script>
+  const routeEl = document.getElementById('route');
+  const statusEl = document.getElementById('status');
+  const metaRoute = document.getElementById('route-meta');
+  const reportBtn = document.getElementById('reportBtn');
+
+  const attempted = decodeURIComponent(window.location.pathname || '/unknown');
+  routeEl.textContent = attempted;
+  metaRoute.textContent = attempted;
+
+  reportBtn.addEventListener('click', ()=>{
+    const subject = encodeURIComponent('Broken link: ' + attempted);
+    const body = encodeURIComponent('I landed on a 404 at: ' + attempted + '\nPage: ' + window.location.href);
+    window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+  });
+
+  let dots = 0;
+  setInterval(()=>{
+    dots=(dots+1)%4;
+    statusEl.textContent = 'Not Found' + '.'.repeat(dots);
+  },800);
+
+  // PARTICLE BACKGROUND
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let w=0,h=0,particles=[];
+  function resize(){ w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight; }
+  window.addEventListener('resize', resize);
+  resize();
+  function rand(min,max){ return Math.random()*(max-min)+min; }
+  function create(){
+    particles=[];
+    for(let i=0;i<60;i++){
+      particles.push({
+        x:rand(0,w), y:rand(0,h), r:rand(0.6,2.2),
+        vx:rand(-0.25,0.25), vy:rand(-0.1,0.3),
+        life:rand(80,200), age:0, hue:rand(160,280)
+      });
+    }
+  }
+  function step(){
+    ctx.clearRect(0,0,w,h);
+    for(let p of particles){
+      p.x += p.vx; p.y += p.vy; p.age++;
+      const alpha = Math.max(0,1-p.age/p.life);
+      ctx.beginPath();
+      ctx.fillStyle = `hsla(${p.hue},80%,60%,${alpha})`;
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+      if(p.x < -10) p.x = w+10;
+      if(p.x > w+10) p.x = -10;
+      if(p.y > h+20) p.y = -20;
+      if(p.age > p.life){ p.age=0; p.x=rand(0,w); p.y=-10; }
+    }
+    requestAnimationFrame(step);
+  }
+  create(); step();
+</script>
+</body>
 </html>
