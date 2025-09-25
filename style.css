@@ -44,21 +44,21 @@ body {
 }
 
 .navbar a:hover {
-  color: #20d6b5;
+  color: #ff6200;
 }
 
 .Signin {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  background: #20d6b5;
+  background: #ff6200;
   padding: 10px 20px;
   border-radius: 25px;
   transition: background 0.3s ease;
 }
 
 .Signin:hover {
-  background: #00ffd0;
+  background: #ff6200;
 }
 
 #myVideo {
@@ -101,7 +101,7 @@ body {
 /* CTA Button */
 .btn-primary {
   display: inline-block;
-  background: #20d6b5;
+  background: #ff6200;
   color: #fff;
   padding: 12px 24px;
   border-radius: 999px;
