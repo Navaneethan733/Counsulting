@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stackly Consulting - Home 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* Homepage 2 Specific Styles */
+      .hero-v2 {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0a58ca 0%, #002b6b 100%);
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0 50px;
+      }
+
+      .hero-v2-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-v2-text {
+        color: white;
+        z-index: 2;
+      }
+
+      .hero-v2-text .subtitle {
+        font-size: 1.1rem;
+        color: #ffcc00;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .hero-v2-text h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero-v2-text p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .hero-v2-stats {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .stat-v2 {
+        text-align: center;
+      }
+
+      .stat-v2 h3 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #ffcc00;
+      }
+
+      .stat-v2 p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin: 0;
+      }
+
+      .hero-v2-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn-v2 {
+        padding: 15px 35px;
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn-v2.primary {
+        background: #ffcc00;
+        color: #222;
+      }
+
+      .btn-v2.primary:hover {
+        background: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 204, 0, 0.4);
+      }
+
+      .btn-v2.secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-v2.secondary:hover {
+        background: white;
+        color: #222;
+        transform: translateY(-3px);
+      }
+
+      .hero-v2-visual {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-v2-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-v2-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .floating-cards {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .floating-card {
+        position: absolute;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .floating-card:nth-child(1) {
+        top: 10%;
+        left: -10%;
+        animation-delay: 0s;
+      }
+
+      .floating-card:nth-child(2) {
+        top: 60%;
+        right: -5%;
+        animation-delay: 2s;
+      }
+
+      .floating-card:nth-child(3) {
+        bottom: 20%;
+        left: -5%;
+        animation-delay: 4s;
+      }
+
+      .floating-card i {
+        font-size: 2rem;
+        color: #0a58ca;
+        margin-bottom: 10px;
+      }
+
+      .floating-card h4 {
+        color: #222;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+
+      .floating-card p {
+        color: #666;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+
+      /* Features Grid Section */
+      .features-grid-section {
+        padding: 100px 0;
+        background: #f8fafc;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid #f0f0f0;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #0a58ca, #002b6b);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .feature-card h3 {
+        color: #222;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+      }
+
+      .feature-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .feature-link {
+        color: #0a58ca;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: gap 0.3s ease;
+      }
+
+      .feature-link:hover {
+        gap: 12px;
+      }
+
+      /* Process Section */
+      .process-section {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .process-step {
+        text-align: center;
+        position: relative;
+      }
+
+      .process-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        right: -15px;
+        width: 30px;
+        height: 2px;
+        background: #0a58ca;
+        opacity: 0.3;
+      }
+
+      .step-number {
+        width: 80px;
+        height: 80px;
+        background: #f0f3f9;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0a58ca;
+        border: 3px solid #e0e7ff;
+      }
+
+      .process-step h3 {
+        color: #222;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .process-step p {
+        color: #666;
+        line-height: 1.6;
+      }
+
+      /* Testimonials Carousel */
+      .testimonials-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #0a58ca, #002b6b);
+        color: white;
+      }
+
+      .testimonials-carousel {
+        max-width: 800px;
+        margin: 50px auto 0;
+        position: relative;
+      }
+
+      .testimonial-slide {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .testimonial-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      .client-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .client-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #ffcc00;
+      }
+
+      .client-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .client-details h4 {
+        margin-bottom: 5px;
+        color: #ffcc00;
+      }
+
+      .client-details p {
+        margin: 0;
+        opacity: 0.8;
+        font-size: 0.9rem;
+      }
+
+      /* CTA Section */
+      .cta-section-v2 {
+        padding: 100px 0;
+        background: #f8fafc;
+        text-align: center;
+      }
+
+      .cta-content-v2 {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .cta-content-v2 h2 {
+        font-size: 2.5rem;
+        color: #222;
+        margin-bottom: 20px;
+      }
+
+      .cta-content-v2 p {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1024px) {
+        .hero-v2-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+
+        .hero-v2-stats {
+          justify-content: center;
+        }
+
+        .floating-cards {
+          display: none;
+        }
+
+        .process-step:not(:last-child)::after {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-v2-text h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-v2-stats {
+          gap: 20px;
+        }
+
+        .stat-v2 h3 {
+          font-size: 2rem;
+        }
+
+        .hero-v2-buttons {
+          justify-content: center;
+        }
+
+        .btn-v2 {
+          padding: 12px 25px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .process-steps {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-v2-text h1 {
+          font-size: 2rem;
+        }
+
+        .hero-v2-stats {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .hero-v2-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-v2 {
+          width: 200px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <div class="logo-icon">S</div>
+          STACKLY
+        </a>
+        <ul class="nav-menu">
+          <li>
+            <a href="./index.html" class="dropdown-toggle">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./index.html"><i class="fas fa-star"></i>Home 1</a></li>
+            </ul>
+          </li>
+          <li><a href="./about.html"><i class="fas fa-users"></i>About</a></li>
+          <li><a href="./service.html"><i class="fas fa-cog"></i>Services</a></li>
+          <li><a href="./projects.html"><i class="fas fa-project-diagram"></i>Projects</a></li>
+          <li><a href="./contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+          <li><a href="./login.html" class="login-btn"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section V2 -->
+    <section class="hero-v2 reveal" id="hero">
+      <div class="hero-v2-content">
+        <div class="hero-v2-text">
+          <div class="subtitle">Premium Consulting Solutions</div>
+          <h1>Transform Your Business With Strategic Excellence</h1>
+          <p>We deliver innovative consulting solutions that drive growth, optimize operations, and create sustainable competitive advantages for your business.</p>
+          
+          <div class="hero-v2-stats">
+            <div class="stat-v2">
+              <h3>500+</h3>
+              <p>Projects Completed</p>
+            </div>
+            <div class="stat-v2">
+              <h3>98%</h3>
+              <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-v2">
+              <h3>25+</h3>
+              <p>Years Experience</p>
+            </div>
+          </div>
+
+          <div class="hero-v2-buttons">
+            <a href="./service.html" class="btn-v2 primary">
+              <i class="fas fa-rocket"></i>
+              Get Started
+            </a>
+            <a href="./contact.html" class="btn-v2 secondary">
+              <i class="fas fa-play-circle"></i>
+              Watch Demo
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-v2-visual">
+          <div class="hero-v2-image">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Business Consulting">
+            <div class="floating-cards">
+              <div class="floating-card">
+                <i class="fas fa-chart-line"></i>
+                <h4>Growth Strategy</h4>
+                <p>Scale your business</p>
+              </div>
+              <div class="floating-card">
+                <i class="fas fa-cogs"></i>
+                <h4>Process Optimization</h4>
+                <p>Improve efficiency</p>
+              </div>
+              <div class="floating-card">
+                <i class="fas fa-users"></i>
+                <h4>Team Building</h4>
+                <p>Build great teams</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section class="features-grid-section reveal" id="features">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="sub-heading">Why Choose Us</p>
+          <h2>Comprehensive Business Solutions</h2>
+          <p>We provide end-to-end consulting services tailored to your unique business needs</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chess-knight"></i>
+            </div>
+            <h3>Strategic Planning</h3>
+            <p>Develop winning strategies with our data-driven approach and industry expertise.</p>
+            <a href="#" class="feature-link">
+              Learn More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3>Market Analysis</h3>
+            <p>Gain deep insights into market trends and competitor strategies.</p>
+            <a href="#" class="feature-link">
+              Learn More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Process Optimization</h3>
+            <p>Streamline operations and boost efficiency with our proven methodologies.</p>
+            <a href="#" class="feature-link">
+              Learn More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Digital Transformation</h3>
+            <p>Leverage technology to transform your business and stay ahead of competition.</p>
+            <a href="#" class="feature-link">
+              Learn More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Team Development</h3>
+            <p>Build high-performing teams with our leadership and talent development programs.</p>
+            <a href="#" class="feature-link">
+              Learn More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Risk Management</h3>
+            <p>Identify and mitigate risks with our comprehensive risk assessment framework.</p>
+            <a href="#" class="feature-link">
+              Learn More
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section reveal" id="process">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="sub-heading">Our Process</p>
+          <h2>How We Deliver Success</h2>
+          <p>A structured approach to ensure measurable results and sustainable growth</p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <h3>Discovery & Analysis</h3>
+            <p>We begin by thoroughly understanding your business, challenges, and objectives through comprehensive analysis.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <h3>Strategy Development</h3>
+            <p>Based on our findings, we develop customized strategies tailored to your specific needs and goals.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <h3>Implementation</h3>
+            <p>We work alongside your team to implement strategies, providing guidance and support throughout execution.</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <h3>Optimization</h3>
+            <p>We continuously monitor performance and make necessary adjustments to ensure ongoing success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section reveal" id="testimonials">
+      <div class="section-container">
+        <div class="section-header">
+          <p class="sub-heading">Client Success Stories</p>
+          <h2>What Our Clients Say</h2>
+          <p>Don't just take our word for it - hear from businesses we've helped transform</p>
+        </div>
+
+        <div class="testimonials-carousel">
+          <div class="testimonial-slide">
+            <div class="testimonial-content">
+              "Stackly Consulting transformed our approach to digital transformation. Their strategic insights helped us increase operational efficiency by 40% within just six months. The team's expertise and dedication were exceptional."
+            </div>
+            <div class="client-info">
+              <div class="client-avatar">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Sarah Johnson">
+              </div>
+              <div class="client-details">
+                <h4>Sarah Johnson</h4>
+                <p>CEO, TechSolutions Inc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section-v2 reveal">
+      <div class="section-container">
+        <div class="cta-content-v2">
+          <h2>Ready to Transform Your Business?</h2>
+          <p>Join hundreds of successful companies that have achieved remarkable growth with our consulting expertise. Let's start your success story today.</p>
+          <div class="hero-v2-buttons">
+            <a href="./contact.html" class="btn-v2 primary">
+              <i class="fas fa-calendar-check"></i>
+              Schedule Consultation
+            </a>
+            <a href="tel:+919876543210" class="btn-v2 secondary">
+              <i class="fas fa-phone"></i>
+              Call Us Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="section-container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="footer-logo">
+              <div class="logo-icon">S</div>
+              STACKLY
+            </div>
+            <p>We are a leading consulting firm dedicated to helping businesses achieve their goals through innovative strategies and expert guidance.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="./index.html">Home 1</a></li>
+              <li><a href="./index2.html">Home 2</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./service.html">Services</a></li>
+              <li><a href="./projects.html">Projects</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><strong>Email:</strong> support@stackly.com</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Location:</strong> Chennai, India</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Stackly Consulting. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Scroll reveal animation
+      window.addEventListener('scroll', reveal);
+      
+      function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        
+        for(let i = 0; i < reveals.length; i++) {
+          const windowHeight = window.innerHeight;
+          const revealTop = reveals[i].getBoundingClientRect().top;
+          const revealPoint = 150;
+          
+          if(revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active');
+          }
+        }
+      }
+      
+      // Mobile menu toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+      
+      // Initialize on load
+      window.addEventListener('load', reveal);
+    </script>
+  </body>
+</html>
