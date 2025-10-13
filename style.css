@@ -226,37 +226,6 @@ body {
   transform: rotate(180deg);
 }
 
-/* Mobile dropdown styles */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: #f8f9fa;
-    border-radius: 0;
-    padding-left: 20px;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    display: none;
-  }
-
-  .nav-menu.active .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown-toggle::after {
-    margin-left: auto;
-  }
-  
-  .nav-menu li {
-    width: 100%;
-  }
-  
-  .dropdown-menu li a {
-    padding: 10px 15px;
-  }
-}
-
 /* ------------------------------
    Hero Section
 ------------------------------ */
@@ -857,8 +826,10 @@ body {
 }
 
 /* ------------------------------
-   Responsive Design
+   RESPONSIVE DESIGN
 ------------------------------ */
+
+/* Tablet Styles */
 @media (max-width: 1024px) {
   .service-box {
     width: calc(50% - 30px);
@@ -899,6 +870,7 @@ body {
   }
 }
 
+/* Mobile Styles */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -925,6 +897,34 @@ body {
   
   .nav-menu li {
     margin: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-menu li a {
+    padding: 10px 20px;
+    display: block;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: #f8f9fa;
+    border-radius: 0;
+    padding-left: 20px;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: none;
+    width: 100%;
+  }
+
+  .nav-menu.active .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-toggle::after {
+    margin-left: auto;
   }
   
   .hero-content h1 {
@@ -950,8 +950,18 @@ body {
     flex-direction: column;
     gap: 20px;
   }
+  
+  .about-images .img2 {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    margin-top: -60px;
+    margin-left: 20%;
+  }
 }
 
+/* Small Mobile Styles */
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 2rem;
@@ -961,12 +971,27 @@ body {
     font-size: 1.8rem;
   }
   
-  .about-images .img2 {
-    position: relative;
-    bottom: 0;
-    right: 0;
-    width: 80%;
-    margin-top: -60px;
-    margin-left: 20%;
+  .nav-container {
+    width: 90%;
+  }
+  
+  .section-container {
+    width: 90%;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .marketing-right h2 {
+    font-size: 1.6rem;
+  }
+  
+  .marketing-left h2 {
+    font-size: 1.5rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.5rem;
   }
 }
